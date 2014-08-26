@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Conway_s_Game_of_Life" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuh-vg-u3s">
+                                <rect key="frame" x="16" y="550" width="82" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="Ezh-Ac-7n6"/>
+                                </constraints>
+                                <state key="normal" title="Start/Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="_startStop" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hS3-iZ-Jrb"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.5" maximumZoomScale="1.5" translatesAutoresizingMaskIntoConstraints="NO" id="c1d-5V-ACD">
+                                <rect key="frame" x="0.0" y="20" width="600" height="522"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="3Mj-AX-Ney"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LII-oE-4N7">
+                                <rect key="frame" x="106" y="550" width="76" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="3Hc-Yh-yKw"/>
+                                </constraints>
+                                <state key="normal" title="Step">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="_step" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kMg-Ww-RxK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0a-Ha-MIL">
+                                <rect key="frame" x="190" y="550" width="76" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="CZn-a3-ZeQ"/>
+                                </constraints>
+                                <state key="normal" title="Clear">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="_clear" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lpH-uU-Ia3"/>
+                                    <action selector="_step" destination="vXZ-lx-hvc" eventType="touchUpInside" id="utn-HY-mad"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iuh-vg-u3s" firstAttribute="top" secondItem="c1d-5V-ACD" secondAttribute="bottom" constant="8" id="6Rr-3Q-d8V"/>
+                            <constraint firstItem="c1d-5V-ACD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="9lL-LH-LhV"/>
+                            <constraint firstItem="LII-oE-4N7" firstAttribute="leading" secondItem="iuh-vg-u3s" secondAttribute="trailing" constant="8" id="ECK-h7-ZPt"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="LII-oE-4N7" secondAttribute="bottom" constant="20" id="KOU-rz-HN2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c1d-5V-ACD" secondAttribute="trailing" constant="-16" id="OC3-ln-NeA"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="L0a-Ha-MIL" secondAttribute="bottom" constant="20" id="Qp3-15-xuX"/>
+                            <constraint firstItem="L0a-Ha-MIL" firstAttribute="leading" secondItem="LII-oE-4N7" secondAttribute="trailing" constant="8" id="hiM-oD-cg2"/>
+                            <constraint firstItem="c1d-5V-ACD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="n1K-79-Qec"/>
+                            <constraint firstItem="iuh-vg-u3s" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ngh-EW-KBs"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="iuh-vg-u3s" secondAttribute="bottom" constant="20" id="zqw-qR-qGO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="_scrollView" destination="c1d-5V-ACD" id="V8h-yn-tMR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
