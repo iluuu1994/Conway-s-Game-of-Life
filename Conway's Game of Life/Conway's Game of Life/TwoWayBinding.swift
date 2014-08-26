@@ -31,10 +31,6 @@ public class TwoWayBinding: NSObject {
     public let followingElement: NSObject
     public let followingKeyPath: String
     
-    private enum Modifier: NSString {
-        case Leading = "Leading", Following = "Following"
-    }
-    
     public init(leadingElement: NSObject, leadingKeyPath: String, followingElement: NSObject, followingKeyPath: String) {
         self.leadingElement = leadingElement
         self.leadingKeyPath = leadingKeyPath
