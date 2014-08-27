@@ -63,8 +63,8 @@ public class TwoWayBinding: NSObject {
     }
     
     public func unbind() {
-        leadingElement.removeObserver(followingKeyPath, forKeyPath: leadingKeyPath)
-        followingElement.removeObserver(leadingKeyPath, forKeyPath: followingKeyPath)
+        leadingElement.removeObserver(self, forKeyPath: leadingKeyPath)
+        followingElement.removeObserver(self, forKeyPath: followingKeyPath)
     }
     
     override public func observeValueForKeyPath(
