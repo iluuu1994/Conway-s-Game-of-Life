@@ -43,7 +43,7 @@ public class TileView: UIView {
         return true
     }
     
-    override public func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+    override public func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         alive = !alive
     }
 
